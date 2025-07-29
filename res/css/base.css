@@ -20,6 +20,23 @@ html, body {
 }
 
 /* ----------------------------
+레이아웃
+---------------------------- */
+.container {
+	width: 100%;
+	padding: 0 16px;
+	margin: 0 auto;
+	max-width: 1200px;
+	box-sizing: border-box;
+}
+
+.inner {
+	width: 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+/* ----------------------------
 링크, 버튼 등 공통 태그 스타일
 ---------------------------- */
 a {
