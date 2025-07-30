@@ -1,6 +1,3 @@
-.splide {
-    visibility: visible;
-}
 .main-slide {
     margin-top: 5rem;
     height: calc(100vh - 7.5rem);
@@ -16,18 +13,18 @@
     position: relative;
 }
 .main-slide .slide-list > li::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.2);
-  pointer-events: none;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
 }
 .main-slide .slide-list > li.slide-03:before {
-  background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.3);
 }
 .main-slide .slide-list > li.slide-01 {
     background: url('../images/main/visual_img_01.jpg') no-repeat left bottom;

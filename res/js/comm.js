@@ -24,6 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
         arrows: false,                  // 좌우 화살표 숨김
         pagination: false,              // 하단 페이지네이션 숨김
         speed: 800,                     // 슬라이드 전환 속도
+        perPage : 1,
+        resetProgress: false, // 프로그레스 리셋 방지
+        intersection: {       // 뷰포트에 보일 때만 자동재생
+            inView: {
+                autoplay: true,
+            },
+            outView: {
+                autoplay: false,
+            },
+        },
     });
 
     const bars = document.querySelectorAll('.slide-progress .bar');
@@ -66,4 +76,5 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     splide.mount();
+    
 });
