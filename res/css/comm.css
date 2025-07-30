@@ -6,7 +6,7 @@
     z-index: 1000;
     position: fixed;
 }
-.header .container {
+.header .container-full {
     height: 100%;
     grid-template-columns: 1fr 2fr 1fr;
     display: grid;
@@ -19,6 +19,9 @@
     display: flex;
     justify-content: space-between;
 }
+.header nav > ul > li {
+    font-size: 1.25rem;
+}
 .header .util-menu {
     text-align: right;
 }
@@ -27,12 +30,4 @@
 }
 .header .util-menu .icon:first-child {
     margin-right: .5rem;
-}
-.splide {
-    visibility: visible;
-}
-.splide__slide {
-    width: 1400px;
-    height: 500px;
-    background: #eee;
 }

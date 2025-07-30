@@ -26,8 +26,16 @@ html, body {
 	width: 100%;
 	padding: 0 16px;
 	margin: 0 auto;
-	max-width: 1200px;
+	max-width: 1440px;
 	box-sizing: border-box;
+}
+
+.container-full {
+	width: 100%;
+	padding: 0 40px;
+	margin: 0 auto;
+	max-width: 100%;
+	box-sizing: border-box;	
 }
 
 .inner {
