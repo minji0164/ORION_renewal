@@ -43,8 +43,8 @@
     background-size: cover;
 }
 .main-slide .slide-list .text-wrap {
-    padding-left: 4.375rem;
-    padding-right: 4.375rem;
+    padding-left: 6.875rem;
+    padding-right: 6.875rem;
     padding-bottom: 11.875rem;
     z-index: 2;
     width: 100%;
@@ -62,7 +62,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 .main-slide .slide-progress {
-    left: 4.375rem;
+    left: 6.875rem;
     bottom: 6.25rem;
     gap: .5rem;
     display: flex;
@@ -80,7 +80,7 @@
     background-color: #fff;
 }
 .main-slide .slide-toggle-btn {
-    right: 4.375rem;
+    right: 6.875rem;
     bottom: 4.8125rem;
     width: 3.125rem;
     height: 3.125rem;
@@ -103,4 +103,87 @@
 .main-slide .slide-toggle-btn .icon {
     font-size: 2rem;
     color: #fff;
+}
+.main-slide .slide-arrows .arrows {
+    background: none;
+}
+.main-slide .slide-arrows .arrow-prev {
+    left: 2rem;
+}
+.main-slide .slide-arrows .arrow-next {
+    right: 2rem;
+}
+.main-slide .slide-arrows span {
+    font-size: 3.75rem;
+    transition: all 0.3s;
+    color: rgba(255, 255, 255, 0.3);
+}
+.main-slide .slide-arrows span:hover {
+    color: #fff;
+}
+
+.main-contents {
+    padding: 6.25rem 6.875rem;
+}
+.main-contents .title-wrap h2 {
+    font-size: 3rem;
+}
+.main-contents .title-wrap p {
+    font-size: 1.125rem;
+    color: #57575b;
+}
+
+.main-brand {
+    display: flex;
+    justify-content: space-between;
+}
+.main-brand .content ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+.main-brand .content li {
+    width: 17.625rem;
+    height: 17.625rem;
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    row-gap: 2.1875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transition: all 0.3s;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.07);
+    background: #f6f7f8;
+}
+.main-brand .content li:first-child {
+    background: none;
+    box-shadow: none;
+}
+.main-brand .content li:not(:first-child):hover {
+    background: #e30512;
+} 
+.main-brand .content li img {
+    max-width: 6.25rem;
+}
+.main-brand .content li span {
+    font-size: 1.375rem;
+    font-weight: 700;
+    color: #212126;
+}
+.main-brand .content li .hover-text {
+    opacity: 0;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    display: none;
+    color: #fff;
+}
+.main-brand .content li:not(:first-child):hover span {
+    display: none;
+}
+.main-brand .content li:not(:first-child):hover .hover-text {
+    opacity: 1;
+    display: block;
 }

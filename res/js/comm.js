@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         interval: 5000,                 // 슬라이드 간 간격(ms)
         pauseOnHover: false,            // 마우스 올려도 멈추지 않음
         pauseOnFocus: false,            // 포커스되어도 멈추지 않음
-        arrows: false,                  // 좌우 화살표 숨김
+        arrows: true,                  // 좌우 화살표 숨김
         pagination: false,              // 하단 페이지네이션 숨김
         speed: 800,                     // 슬라이드 전환 속도
         perPage : 1,
@@ -76,5 +76,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     splide.mount();
-    
+
+    document.querySelectorAll('.main-brand .content li img').forEach(img => {
+        const original = img.src;
+        const hover = original.replace('.png', '_hover.png');
+        
+        img.parentElement.addEventListener('mouseenter', () => {
+            img.src = hover;
+        });
+        img.parentElement.addEventListener('mouseleave', () => {
+            img.src = original;
+        });
+    });
 });

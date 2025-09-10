@@ -8,7 +8,7 @@
 }
 
 html, body {
-	height: 100%;
+	height: calc(100% - 5rem);
 	font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
 	font-size: 16px;
 	color: #333;
@@ -25,15 +25,15 @@ html, body {
 ---------------------------- */
 .container {
 	width: 100%;
-	padding: 0 16px;
+	padding: 0 20px;
 	margin: 0 auto;
-	max-width: 1440px;
+	max-width: 1680px;
 	box-sizing: border-box;
 }
 
 .container-full {
 	width: 100%;
-	padding: 0 40px;
+	padding: 0 70px;
 	margin: 0 auto;
 	max-width: 100%;
 	box-sizing: border-box;	
