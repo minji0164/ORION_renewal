@@ -43,8 +43,8 @@
     background-size: cover;
 }
 .main-slide .slide-list .text-wrap {
-    padding-left: 6.875rem;
-    padding-right: 6.875rem;
+    padding-left: 8.5625rem;
+    padding-right: 8.5625rem;
     padding-bottom: 11.875rem;
     z-index: 2;
     width: 100%;
@@ -62,7 +62,7 @@
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
 }
 .main-slide .slide-progress {
-    left: 6.875rem;
+    left: 8.5625rem;
     bottom: 6.25rem;
     gap: .5rem;
     display: flex;
@@ -123,7 +123,7 @@
 }
 
 .main-contents {
-    padding: 6.25rem 6.875rem;
+    padding: 6.25rem 8.5625rem;
 }
 .main-contents .title-wrap h2 {
     font-size: 3rem;
@@ -131,6 +131,31 @@
 .main-contents .title-wrap p {
     font-size: 1.125rem;
     color: #57575b;
+}
+
+.main-contents .more-btn {
+    margin-top: 3.75rem;
+}
+.main-contents .more-btn a {
+    gap: .25rem;
+    font-size: 1.125rem;
+    align-items: center;
+    display: flex;
+    color: #212126;
+}
+.main-contents .more-btn a:hover span {
+    animation: moveArrow 0.8s infinite alternate ease-in-out;
+}
+@keyframes moveArrow {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(.125rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .main-brand {
@@ -187,3 +212,37 @@
     opacity: 1;
     display: block;
 }
+
+.main-performance {
+    display: flex;
+    justify-content: space-between;
+}
+.main-performance .name-box {
+    display: flex;
+    align-items: center;
+}
+.main-performance .name-box .icon {
+    color: #c3c3c5;
+}
+.main-performance .name-box .text {
+    margin-left: .25rem;
+    font-size: 1.125rem;
+    color: #57575b;
+}
+.main-performance ul {
+    margin-top: 1.0625rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3.625rem 3.9375rem;
+}
+.main-performance ul li {
+    padding-top: 1.0625rem;
+    width: 21.0625rem;
+    border-top: 1px solid #c3c3c5;
+}
+.main-performance ul li .count em {
+    font-size: 5.625rem;
+}
+.main-performance ul li .count span {
+    color: #212126;
+} 

@@ -11,13 +11,17 @@ html, body {
 	height: calc(100% - 5rem);
 	font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
 	font-size: 16px;
-	color: #333;
+	color: #212126;
 	background-color: #fff;
 	line-height: 1.5;
 	word-break: keep-all;
 	caret-color: transparent;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+em {
+	font-style: normal;
 }
 
 /* ----------------------------
@@ -43,6 +47,10 @@ html, body {
 	width: 100%;
 	max-width: 100%;
 	box-sizing: border-box;
+}
+
+.bg-on {
+	background: #f6f7f8;
 }
 
 /* ----------------------------
