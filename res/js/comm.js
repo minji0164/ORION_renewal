@@ -10,12 +10,12 @@ function raf(time) {
 }
 requestAnimationFrame(raf)
 
-// ================== 슬라이드 ==================
-const splide = new Splide('#main-slide', {
+// ================== 비주얼 슬라이드 ==================
+const mainSlide = new Splide('#main-slide', {
     type: 'loop',                   // 슬라이드 반복
     autoplay: true,                 // 자동 재생
     rewind: true,                   // 끝나면 처음으로
-    interval: 5000,                 // 슬라이드 간 간격(ms)
+    interval: 5000,                 // 슬라이드 머무는 시간
     pauseOnHover: false,            // 마우스 올려도 멈추지 않음
     pauseOnFocus: false,            // 포커스되어도 멈추지 않음
     arrows: true,                  // 좌우 화살표 숨김
@@ -44,27 +44,27 @@ function updateProgress(index) {
 bars.forEach((bar) => {
     bar.addEventListener('click', () => {
         const index = parseInt(bar.dataset.index);
-        splide.go(index);
+        mainSlide.go(index);
     });
 });
-splide.on('mounted move', () => {
-    updateProgress(splide.index);
+mainSlide.on('mounted move', () => {
+    updateProgress(mainSlide.index);
 });
 
 // 정지/재생 토글 버튼
-const toggleButton = splide.root.querySelector('.slide-toggle-btn');
+const toggleButton = mainSlide.root.querySelector('.slide-toggle-btn');
 const icon = toggleButton.querySelector('.slide-toggle-btn .icon');
-splide.on('autoplay:play', function () {
+mainSlide.on('autoplay:play', function () {
 toggleButton.setAttribute('aria-label', 'Pause autoplay');
 icon.textContent = 'pause'; 
 });
 
-splide.on('autoplay:pause', function () {
+mainSlide.on('autoplay:pause', function () {
 toggleButton.setAttribute('aria-label', 'Start autoplay');
 icon.textContent = 'play_arrow'; 
 });
 toggleButton.addEventListener( 'click', function () {
-    var Autoplay = splide.Components.Autoplay;
+    var Autoplay = mainSlide.Components.Autoplay;
     if ( Autoplay.isPaused() ) {
         Autoplay.play();
     } else {
@@ -72,7 +72,7 @@ toggleButton.addEventListener( 'click', function () {
     }
 });
 
-splide.mount();
+mainSlide.mount();
 
 // ================== BRAND ESSENCE 각 카드 호버 시 이미지 변경 ==================
 document.querySelectorAll('.main-brand .content li img').forEach(img => {
@@ -137,3 +137,51 @@ new Waypoint({
     //offset: '50%'
     offset: 'bottom-in-view' //화면에 보이자마자 실행
 });
+
+// ================== BUSINESS 슬라이드 ==================
+const businessSlide = new Splide('#main-business-slide', {
+    type: 'loop',                   // 슬라이드 반복
+    autoplay: true,                 // 자동 재생
+    rewind: true,                   // 끝나면 처음으로
+    interval: 5000,                 // 슬라이드 머무는 시간
+    pauseOnHover: false,            // 마우스 올려도 멈추지 않음
+    pauseOnFocus: false,            // 포커스되어도 멈추지 않음
+    arrows: false,                  // 좌우 화살표 숨김
+    pagination: false,              // 하단 페이지네이션 숨김
+    speed: 800,                     // 슬라이드 전환 속도
+    perPage : 1,
+    gap: '1.25rem',
+    fixedWidth: '85%',
+    focus: 'center',
+    resetProgress: false, // 프로그레스 리셋 방지
+    intersection: {       // 뷰포트에 보일 때만 자동재생
+        inView: {
+            autoplay: true,
+        },
+        outView: {
+            autoplay: false,
+        },
+    },
+});
+
+// 커스텀 텍스트 페이지네이션
+const textBars = document.querySelectorAll('.slide-business-progress .bar');
+
+function changeBar(index) {
+    textBars.forEach((bar, i) => {
+        bar.classList.toggle('active', i === index);
+    });
+}
+
+textBars.forEach((bar) => {
+    bar.addEventListener('click', () => {
+        const index = parseInt(bar.dataset.index);
+        businessSlide.go(index);
+    });
+});
+
+businessSlide.on('mounted move', () => {
+    changeBar(businessSlide.index);
+});
+
+businessSlide.mount();
