@@ -140,8 +140,8 @@ new Waypoint({
 
 // ================== BUSINESS 슬라이드 ==================
 const businessSlide = new Splide('#main-business-slide', {
-    type: 'loop',                   // 슬라이드 반복
-    autoplay: true,                 // 자동 재생
+    type: '',                   // 슬라이드 반복
+    autoplay: false,                 // 자동 재생
     rewind: true,                   // 끝나면 처음으로
     interval: 5000,                 // 슬라이드 머무는 시간
     pauseOnHover: false,            // 마우스 올려도 멈추지 않음
