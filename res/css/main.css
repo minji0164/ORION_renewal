@@ -80,7 +80,7 @@
     background-color: #fff;
 }
 .main-slide .slide-toggle-btn {
-    right: 6.875rem;
+    right: 8.5625rem;
     bottom: 4.8125rem;
     width: 3.125rem;
     height: 3.125rem;
@@ -127,6 +127,7 @@
 }
 .main-contents .title-wrap h2 {
     font-size: 3rem;
+    font-family: 'Poppins';
 }
 .main-contents .title-wrap p {
     font-size: 1.125rem;
@@ -317,6 +318,9 @@
     align-items: center;
     gap: .625rem;
 }
+.main-business-slide .eng-name-box b {
+    font-family: 'Poppins';
+}
 .main-business-slide .eng-name-box .icon {
     font-size: 2rem;
 }
@@ -351,6 +355,7 @@
 .slide-business-progress button {
     font-size: 1.5rem;
     font-weight: 700;
+    font-family: 'Poppins';
     color: #c3c3c5;
 }
 .slide-business-progress button.active {
