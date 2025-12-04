@@ -130,6 +130,7 @@
     font-family: 'Poppins';
 }
 .main-contents .title-wrap p {
+    margin-top: 1.25rem;
     font-size: 1.125rem;
     color: #57575b;
 }
@@ -360,4 +361,52 @@
 }
 .slide-business-progress button.active {
     color: #212126;
+}
+
+.main-newsroom .left-box {
+    position: relative;
+}
+.main-newsroom .more-btn {
+    margin-top: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+.main-newsroom .content {
+    margin-top: 1.375rem;
+}
+.main-newsroom .news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+.main-newsroom .news-list .img-thumb {
+    max-height: 18.75rem;
+    border-radius: .625rem;
+    overflow: hidden;
+    border: 1px solid #e2e2e2;
+}
+.main-newsroom .news-list .img-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .4s ease;
+}
+.main-newsroom .news-list li:hover .img-thumb img {
+    transform: scale(1.05);
+}
+.main-newsroom .title-box {
+    margin-top: 1.125rem;
+}
+.main-newsroom .title-box .category {
+    font-weight: 700;
+    color: #e30512;
+}
+.main-newsroom .title-box .title {
+    font-size: 1.125rem;
+    margin-top: .3125rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
