@@ -1,4 +1,5 @@
-// ================== 스크롤 라이브러리 ==================
+// ================== 스크롤 라이브러리 (기존 코드) ==================
+// ================== Lenis 초기 설정 (기존과 동일) ==================
 const lenis = new Lenis({
     duration: 1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -9,6 +10,99 @@ function raf(time) {
     requestAnimationFrame(raf)
 }
 requestAnimationFrame(raf)
+
+// ================== jQuery를 사용한 커스텀 스크롤바 구현 ==================
+
+$(function() { // 문서 준비 완료 후 실행
+    const $container = $('#custom-scrollbar-container');
+    const $thumb = $('#custom-scrollbar-thumb');
+
+    let isDragging = false;
+    let startY;
+    let startScrollTop;
+    let maxTranslate; // Thumb이 이동할 수 있는 최대 거리
+
+    // 1. Thumb 높이 계산 및 설정
+    function setThumbHeight() {
+        const viewportHeight = window.innerHeight;
+        const contentLimit = lenis.limit; 
+        const containerHeight = $container.outerHeight();
+
+        // 전체 내용 대비 현재 화면 비율
+        const ratio = viewportHeight / (contentLimit + viewportHeight); 
+        const thumbHeight = ratio * containerHeight;
+
+        const minThumbHeight = 50; 
+        $thumb.css('height', Math.max(thumbHeight, minThumbHeight) + 'px');
+        
+        // Thumb 높이가 변경되었으므로 최대 이동 거리도 다시 계산
+        maxTranslate = containerHeight - $thumb.outerHeight();
+    }
+
+    // 2. Lenis 스크롤 이벤트 발생 시 Thumb 위치 업데이트
+    lenis.on('scroll', (e) => {
+        // 드래그 중이 아닐 때만 Lenis의 스크롤 이벤트를 반영
+        if (isDragging) return; 
+
+        const progress = e.progress;
+        const translateY = progress * maxTranslate;
+
+        // jQuery의 .css()를 사용하여 CSS transform 적용
+        $thumb.css('transform', `translateY(${translateY}px)`);
+    });
+
+    // 3. 드래그 기능 이벤트 핸들러 (jQuery Events)
+
+    // 드래그 시작 (mousedown)
+    $thumb.on('mousedown', function(e) {
+        e.preventDefault();
+        
+        isDragging = true;
+        startY = e.clientY; 
+        
+        // 현재 적용된 transform 값 가져오기
+        const transformMatrix = $thumb.css('transform');
+        const matrix = new DOMMatrix(transformMatrix);
+        startScrollTop = matrix.m42; // translateY 값 추출
+
+        $('body').css('user-select', 'none'); // 텍스트 선택 방지
+        $thumb.css('cursor', 'grabbing');
+    });
+
+    // 드래그 중 (mousemove) - document에 이벤트 바인딩
+    $(document).on('mousemove', function(e) {
+        if (!isDragging) return;
+
+        const deltaY = e.clientY - startY; 
+        let newTranslateY = startScrollTop + deltaY;
+        
+        // 경계값 제한
+        newTranslateY = Math.max(0, Math.min(newTranslateY, maxTranslate));
+
+        // Thumb 위치 업데이트 (시각적)
+        $thumb.css('transform', `translateY(${newTranslateY}px)`);
+        
+        // Lenis 스크롤 이동 (실제)
+        const progress = newTranslateY / maxTranslate;
+        const actualScrollPosition = progress * lenis.limit; 
+        
+        // duration: 0 으로 설정하여 드래그 느낌을 살림
+        lenis.scrollTo(actualScrollPosition, { duration: 0 });
+    });
+
+    // 드래그 종료 (mouseup) - document에 이벤트 바인딩
+    $(document).on('mouseup', function() {
+        if (isDragging) {
+            isDragging = false;
+            $('body').css('user-select', '');
+            $thumb.css('cursor', 'grab');
+        }
+    });
+
+    // 초기 설정 및 창 크기 변경 시 재설정
+    setThumbHeight();
+    $(window).on('resize', setThumbHeight);
+});
 
 // ================== 비주얼 슬라이드 ==================
 const mainSlide = new Splide('#main-slide', {
