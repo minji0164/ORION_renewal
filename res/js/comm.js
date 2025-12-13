@@ -1,5 +1,4 @@
-// ================== 스크롤 라이브러리 (기존 코드) ==================
-// ================== Lenis 초기 설정 (기존과 동일) ==================
+// ================== Lenis 초기 설정 ==================
 const lenis = new Lenis({
     duration: 1,
     easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -11,7 +10,7 @@ function raf(time) {
 }
 requestAnimationFrame(raf)
 
-// ================== jQuery를 사용한 커스텀 스크롤바 구현 ==================
+// ================== 커스텀 스크롤바 구현 ==================
 
 $(function() { // 문서 준비 완료 후 실행
     const $container = $('#custom-scrollbar-container');
