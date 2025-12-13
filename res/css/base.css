@@ -8,7 +8,6 @@
 }
 
 html, body {
-	height: calc(100% - 5rem);
 	font-family: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
 	font-size: 16px;
 	color: #212126;
@@ -18,6 +17,10 @@ html, body {
 	caret-color: transparent;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	height: calc(100% - 5rem);
 }
 
 em {
@@ -121,4 +124,15 @@ table {
 	margin: -1px;
 	overflow: hidden;
 	clip: rect(0,0,0,0);
+}
+
+/* ----------------------------
+아이콘
+---------------------------- */
+.icon-light {
+	font-weight: 200 !important;
+}
+
+.icon-normal {
+	font-weight: 400 !important;
 }

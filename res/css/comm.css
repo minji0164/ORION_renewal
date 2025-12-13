@@ -1,5 +1,5 @@
 .header {
-    height: 80px;
+    height: 5rem;
     top: 0;
     left: 0;
     right: 0;
@@ -13,21 +13,146 @@
     align-items: center;
 }
 .header h1 img {
-    max-height: 30px;
+    max-height: 1.875rem;
 }
 .header nav > ul {
     display: flex;
     justify-content: space-between;
 }
 .header nav > ul > li {
-    font-size: 1.25rem;
+    font-size: 20px;
 }
 .header .util-menu {
     text-align: right;
 }
 .header .util-menu .material-symbols-outlined {
-    font-size: 32px;
+    font-size: 2rem;
 }
 .header .util-menu .icon:first-child {
-    margin-right: .5rem;
+    margin-right: 8px;
+}
+
+.ft-padding {
+    padding: 100px 0 80px;
+} 
+.ft-box {
+    padding: 80px 70px;
+    border-radius: 30px;
+    background: #222;
+}
+.ft-logo a img {
+    max-height: 35px;
+}
+.ft-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ft-top .family-site-wrap {
+    width: 15.3125rem;
+    position: relative;
+}
+.ft-top .family-site-wrap button {
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 700;
+    padding: .625rem 0 .625rem .3125rem;
+    border-bottom: 1px solid #c3c3c5;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #c3c3c5;
+}
+.ft-top .family-site-wrap button .icon {
+    font-size: 1.75rem;
+    transition: all 0.3s ease-in-out;
+}
+.ft-top .family-site-wrap ul {
+    max-height: 18.75rem;
+    bottom: 3.75rem;
+    border-radius: 1.25rem;
+    width: 15.3125rem;
+    border: 1px solid #57575b;
+    position: absolute;
+    display: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #222;
+}
+.ft-top .family-site-wrap ul li {
+    padding: .625rem 1.5625rem;
+    border-bottom: 1px solid #57575b;
+}
+.ft-top .family-site-wrap ul li:first-child {
+    padding-top: .875rem;
+}
+.ft-top .family-site-wrap ul li:last-child {
+    padding-bottom: .875rem;
+    border-bottom: none;
+}
+.ft-top .family-site-wrap ul li a {
+    color: #c3c3c5;
+}
+.ft-top .family-site-wrap ul li:hover a {
+    font-weight: 700;
+}
+.ft-mid {
+    margin-top: 3.75rem;
+}
+.ft-mid .new-open-pages li a {
+    font-weight: 700;
+    color: #fff;
+}
+.ft-mid .new-open-pages {
+    gap: 1.5rem;
+    display: flex;
+}
+.ft-mid .new-open-pages li a {
+    font-size: 18px;
+    gap: .3125rem;
+    display: flex;
+    align-items: center;
+}
+.ft-mid .new-open-pages li a .icon {
+    font-size: 1rem;
+}
+.ft-mid .in-open-pages {
+    margin-top: .625rem;
+    gap: 1.25rem;
+    display: flex;
+}
+.ft-mid .in-open-pages li a {
+    color: #c3c3c5;
+}
+.ft-mid .company-info {
+    margin-top: 2.8125rem;
+}
+.ft-mid .company-info ul {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.ft-mid .company-info ul li span {
+    color: #c3c3c5;
+}
+.ft-mid .company-info ul li span b {
+    font-weight: 400;
+    color: #fff;
+}
+.ft-bot {
+    margin-top: 2.8125rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.ft-bot .copyright {
+    color: #c3c3c5;
+}
+.ft-bot .sns-wrap {
+    gap: .9375rem;
+    display: flex;
+}
+.ft-bot .sns-wrap li a img {
+    max-height: 2.5rem;
 }

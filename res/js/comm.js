@@ -185,3 +185,19 @@ businessSlide.on('mounted move', () => {
 });
 
 businessSlide.mount();
+
+// ================== footer family site 슬라이드 업다운 ==================
+const $button = $('#familySiteBtn');
+const $list = $('#familySiteList');
+const $icon = $button.find('.icon');
+
+$button.on('click', function() {
+    $list.slideToggle(300, function() {
+        if ($list.is(':visible')) {
+            $icon.text('remove');
+        }
+        else {
+            $icon.text('add');
+        }
+    });
+});
