@@ -103,6 +103,20 @@ $(function() { // 문서 준비 완료 후 실행
     $(window).on('resize', setThumbHeight);
 });
 
+// ================== header ==================
+const utilMenu = document.querySelector('.util-menu');
+const langBtn  = utilMenu.querySelector('button:nth-child(2)');
+const langMenu = utilMenu.querySelector('.lang-menu');
+
+langBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // document 클릭 방지
+    langMenu.classList.toggle('active');
+});
+
+document.addEventListener('click', () => {
+    langMenu.classList.remove('active');
+});
+
 // ================== 비주얼 슬라이드 ==================
 const mainSlide = new Splide('#main-slide', {
     type: 'loop',                   // 슬라이드 반복

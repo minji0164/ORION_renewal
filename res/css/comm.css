@@ -20,24 +20,59 @@
     justify-content: space-between;
 }
 .header nav > ul > li {
-    font-size: 20px;
+    font-size: 1.25rem;
 }
 .header .util-menu {
+    position: relative;
     text-align: right;
 }
 .header .util-menu .material-symbols-outlined {
     font-size: 2rem;
 }
-.header .util-menu .icon:first-child {
-    margin-right: 8px;
+.header .util-menu button:first-child .icon {
+    margin-right: .5rem;
+    display: none;
+}
+.header .lang-menu {
+    width: 5rem;
+    right: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    position: absolute;
+}
+.lang-menu.active {
+    max-height: 70px;
+}
+.header .lang-menu ul {
+    border-radius: .5rem;
+    overflow: hidden;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+}
+.header .lang-menu ul li {
+    border-bottom: 1px solid #e2e2e2;
+    text-align: center;
+}
+.header .lang-menu ul li:last-child {
+    border-bottom: none;
+}
+.header .lang-menu ul li a {
+    padding: .25rem 0;
+    font-size: .875rem;
+    display: block;
+}
+.header .lang-menu ul li:hover a {
+    background: #e2e2e2;
 }
 
 .ft-padding {
     padding: 100px 0 80px;
 } 
 .ft-box {
-    padding: 80px 70px;
-    border-radius: 30px;
+    padding: 5rem 4.375rem;
+    border-radius: 1.875rem;
     background: #222;
 }
 .ft-logo a img {

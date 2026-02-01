@@ -67,10 +67,10 @@ a {
 }
 
 button {
+	font-size: 0;
 	background: none;
 	border: none;
 	cursor: pointer;
-	font: inherit;
 	color: inherit;
 }
 
