@@ -104,6 +104,18 @@ $(function() { // 문서 준비 완료 후 실행
 });
 
 // ================== header ==================
+// 메뉴
+const header = document.querySelector('.header');
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 10) {
+        header.classList.add('on');
+    } else {
+        header.classList.remove('on');
+    }
+});
+
+// language 버튼
 const utilMenu = document.querySelector('.util-menu');
 const langBtn  = utilMenu.querySelector('button:nth-child(2)');
 const langMenu = utilMenu.querySelector('.lang-menu');
